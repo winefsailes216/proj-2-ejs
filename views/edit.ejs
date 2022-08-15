@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    /> -->
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+         crossorigin="anonymous"
+      />
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+         crossorigin="anonymous"
+      ></script>
+      <title><%=header%></title>
+   </head>
+
+   <body class="container border-start border-end border-bottom">
+      <%- include('../public/partials/nav.ejs') %>
+      <div class="row border-bottom mb-3">
+         <%- include('../public/partials/sidebar.ejs') %>
+
+         <div class="col-9 border-start">
+            <h1><%=header%></h1>
+            <a href="/records-edit" class="btn btn-dark mb-2 mt-2">Back⬅</a>
+            <hr />
+            <form action="/save" method="post" class="p-3 pt-0">
+               <input
+                  type="number"
+                  class="form-control"
+                  id="id"
+                  name="id"
+                  value="<%=records.id%>"
+                  hidden
+               />
+               <br />
+               <div class="form-group mb-3">
+                  <h6 for="vehicle">VEHICLE NAME</h6>
+                  <input
+                     type="text"
+                     class="form-control"
+                     id="vehicle"
+                     name="vehicle"
+                     value="<%=records.vehicle%>"
+                  />
+               </div>
+               <div class="form-group mb-3">
+                  <h6 for="make_model">MAKE AND MODEL</h6>
+                  <input
+                     type="text"
+                     class="form-control"
+                     id="make_model"
+                     name="make_model"
+                     value="<%=records.make_model%>"
+                  />
+               </div>
+               <div class="form-group mb-3">
+                  <h6 for="year">YEAR</h6>
+                  <input
+                     type="year"
+                     class="form-control"
+                     id="year"
+                     name="year"
+                     value="<%=records.year%>"
+                  />
+               </div>
+               <div class="form-group mb-3">
+                  <h6 for="description">DESCRIPTION</h6>
+                  <input
+                     type="text"
+                     class="form-control"
+                     id="description"
+                     name="description"
+                     value="<%=records.description%>"
+                  />
+               </div>
+               <div class="form-check mb-3">
+                  <h6 for="status">STATUS:</h6>
+                  <BR />
+                  <input
+                     class="form-check-input"
+                     type="radio"
+                     name="status"
+                     id="status"
+                     value="Available"
+                  />
+                  <h6 class="form-check-h6" for="Available">Available</h6>
+               </div>
+               <div class="form-check mb-3">
+                  <input
+                     class="form-check-input"
+                     type="radio"
+                     name="status"
+                     id="status"
+                     value="Unavailable"
+                  />
+                  <h6 class="form-check-h6" for="Unavailable">Unavailable</h6>
+               </div>
+               <button type="submit" class="btn btn-success mb-3">
+                  Submit
+               </button>
+            </form>
+            <br />
+         </div>
+      </div>
+      <%- include('../public/partials/footer.ejs') %>
+      <script
+         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+         crossorigin="anonymous"
+      ></script>
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+         crossorigin="anonymous"
+      ></script>
+   </body>
+</html>

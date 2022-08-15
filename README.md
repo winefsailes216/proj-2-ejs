@@ -1,1 +1,1 @@
-# proj-2-ejs
+# miniproject-2
